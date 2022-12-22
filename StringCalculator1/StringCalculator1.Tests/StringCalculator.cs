@@ -66,5 +66,16 @@ namespace StringCalculator1.Tests
 
             Assert.That(result, Is.EqualTo(suma));
         }
+        [TestCase("//;\n1;2", 3)]
+        [TestCase("//k\n-1k2k3k4", 8)]
+        [TestCase("//;\n1;2;1001", 3)]
+        public void ShouldAddMorenumbersWithDelimeter2(string numbers, int suma)
+        {
+            var stringCalculator = new StringCalculator();
+
+            var result = stringCalculator.AddNumbersFindDelimiter(numbers);
+
+            Assert.That(result, Is.EqualTo(suma));
+        }
     }
 }
